@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+    <h1>The Phil Mitchell Library</h1>
+<body>
+    <section>
+        <div class="book-container">
+            {% for book in books %}
+            <div class="book">
+               TITLE :  <h2>{{ book.title }}</h2>
+               AUTHOR : <h3>{{ book.author }}</h3>
+               GENRE : <h4>{{ book.genre }}</h4>
+                
+            </div>
+            <hr>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>
