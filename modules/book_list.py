@@ -9,4 +9,10 @@ book_6 = Book("The Art of War", "Sun Tzu", "Treatise on war")
 book_7 = Book("Dune", "Frank Herbert", "Science Fiction")
 book_8 = Book("Cosmos", "Carl Sagan", "Science")
 
-books = (book_1, book_2, book_3, book_4, book_5, book_6, book_7, book_8)
+books = [book_1, book_2, book_3, book_4, book_5, book_6, book_7, book_8]
+
+def add_book(book):
+    books.append(book)
+
+def remove_book(book):
+    books.pop(book)

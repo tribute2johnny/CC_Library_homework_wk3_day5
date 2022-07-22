@@ -1,13 +1,38 @@
-h1 {
+header {
     color: white;
     text-align: center;
     background-color: darkslateblue;
+    padding: 16px;
+    justify-content: space-between;
+    margin: 0;
+    font-family: fantasy;
+    font-style: oblique;
+    font-size: 100px;
+}
+body {
+    margin: 0;
+}
+
+
+#h1 {
+    text-align: center;
+    color: blue;
+    font-size: 50px;
+    font-family: fantasy;
+
+}
+
+#h2 {
+    text-align: center;
 }
 
 .book {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     font-size: large;
+    list-style: none;
     
 }
+
+ 
