@@ -10,22 +10,26 @@
     <header>The Phil Mitchell Library</header>
     <h1 id="h1">Books List</h1>
     <h2 id="h2"><a href="books/new">Add New Book</a></h2>
-    <hr>
+    <hr id="hr">
 <body>
     <section>
         <div class="book-container">
             {% for book in books %}
+            
             <div class="book">
-            <a href="/books/{{ books.index(book) }}">View Book</a>
                TITLE :  <h2>{{ book.title }}</h2>
                AUTHOR : <h3>{{ book.author }}</h3>
                GENRE : <h4>{{ book.genre }}</h4>
-               <form action="/books/delete/{{ books.index(book) }}" method="POST">
+               <a href="/books/{{ books.index(book) }}">View Book</a>
+               <div>
+                <hr>
+               </div>
+            <form id="form1" action="/books/delete/{{ books.index(book) }}" method="POST">
                 <input type="submit" value="DELETE">
-                </form>
+            </form>
                 
             </div>
-            <hr>
+            
             {% endfor %}
         </div>
     </section>

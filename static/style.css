@@ -2,7 +2,7 @@ header {
     color: white;
     text-align: center;
     background-color: darkslateblue;
-    padding: 16px;
+    padding: 20px;
     justify-content: space-between;
     margin: 0;
     font-family: fantasy;
@@ -11,7 +11,9 @@ header {
 }
 body {
     margin: 0;
-    border: solid 15px darkslateblue;
+    border-right: ridge 200px darkslateblue;
+    border-left: groove 200px darkslateblue;
+    border-bottom: solid 100px darkslateblue;
 }
 
 
@@ -27,15 +29,36 @@ body {
     text-align: center;
 }
 
-.book {
-    align-items: center;
+.book-container {
+
     display: flex;
-    flex-direction: column;
     font-size: large;
-    list-style: none;
-    padding: 15px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 33%;
+    max-width: 800px;
+    margin: 0 auto;
+    
     
     
 }
 
- 
+
+.book {
+    flex-basis: 100%;
+    text-align: center;
+    border: 20px solid black;
+}
+
+#hr {
+    background-color: darkslateblue;
+    padding: 20px;
+    margin: 0;
+    width: auto;
+}
+
+#form1 {
+    background-color: darkslateblue;
+    padding: 16px;
+}
+
