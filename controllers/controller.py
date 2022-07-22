@@ -11,6 +11,12 @@ def index():
 def new_book():
     return render_template('new_book.html', title='New Book')
 
+@app.route('/books/<index>')
+def view_book(index):
+    chosen_book = books[int(index)]
+    return render_template('book.html', book=chosen_book)
+
+
 @app.route('/books', methods=['POST'])
 def create_book():
     print(request.form)
@@ -21,10 +27,11 @@ def create_book():
     add_book(new_book)
     return redirect('/books')
 
-@app.route('/books/delete/<book>', methods=['POST'])
-def delete_book_by_index(book):
-    remove_book(int(book))
+@app.route('/books/delete/<index>', methods=['POST'])
+def delete_book_by_index(index):
+    remove_book(int(index))
     return redirect('/books')
+
 
 
     
