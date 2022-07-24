@@ -7,7 +7,18 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<header>The Phil Mitchell Library</header>
+<header>The Phil Mitchell Library
+    <div class="row">
+        <div class="column">
+            <img id="img2" src="https://www.pngmart.com/files/15/Antique-Book-Stack-Transparent-Background.png" alt="">
+        </div>
+        <div class="column">
+            <img id="img1" src="https://i2-prod.mirror.co.uk/incoming/article18972865.ece/ALTERNATES/s1200b/0_EH_CHP_200819phill-disowns_171JPG.jpg" alt="">
+        </div>
+        <div class="column">
+            <img id="img3"src="https://www.pngmart.com/files/15/Antique-Book-Stack-Transparent-Background.png" alt="">
+        </div>
+</header>
 <body>
     <form class="form-inline" action="/books" method="POST">
         <label for="title">Title</label>
@@ -16,6 +27,8 @@
         <input type="text" name="author" id="author">
         <label for="genre">Genre</label>
         <input type="text" name="genre" id="genre">
+        <label for="checked_out">Checked out?</label>
+        <input type="checkbox" name="checked_out" id="checked_out" value="False">
         <input type="submit" value="Add Book">
     </form>
     

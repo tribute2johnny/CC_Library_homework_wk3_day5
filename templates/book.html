@@ -7,7 +7,18 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-    <header>The Phil Mitchell Library</header>
+    <header>The Phil Mitchell Library
+        <div class="row">
+            <div class="column">
+                <img id="img2" src="https://www.pngmart.com/files/15/Antique-Book-Stack-Transparent-Background.png" alt="">
+            </div>
+            <div class="column">
+                <img id="img1" src="https://i2-prod.mirror.co.uk/incoming/article18972865.ece/ALTERNATES/s1200b/0_EH_CHP_200819phill-disowns_171JPG.jpg" alt="">
+            </div>
+            <div class="column">
+                <img id="img3"src="https://www.pngmart.com/files/15/Antique-Book-Stack-Transparent-Background.png" alt="">
+            </div>
+    </header>
     <h1 id="h1">View Book Details</h1>
     
     <hr>
@@ -18,6 +29,11 @@
             <h4>TITLE : {{ book.title }}</h4>
             <h5>AUTHOR : {{ book.author }}</h5>
             <h5>GENRE : {{ book.genre }}</h5>
+            {% if book.checked_out %}
+                <h5><i> Available : &#9989; </i></h5>
+                    {% else %}
+                <h5><i> Available : &#10060;</i></h5>
+                {% endif %}
         </div>
     </div>
 

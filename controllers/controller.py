@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, redirect
 from app import app
-from modules.book import Book
-from modules.book_list import books, add_book, remove_book 
+from models.book import Book
+from models.book_list import books, add_book, remove_book 
+import datetime
 
 @app.route('/books')
 def index():
@@ -23,7 +24,11 @@ def create_book():
     title = request.form['title']
     author = request.form['author']
     genre = request.form['genre']
-    new_book = Book(title, author, genre)
+    checked_out = True if 'checked_out' in request.form else False
+    return_by = request.form['return_by']
+    split_date = return_by.split('-')
+    return_by = datetime.date(split_date[0], split_date[1], split_date[2])
+    new_book = Book(title, author, genre, checked_out, return_by)
     add_book(new_book)
     return redirect('/books')
 
