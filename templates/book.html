@@ -30,9 +30,10 @@
             <h5>AUTHOR : {{ book.author }}</h5>
             <h5>GENRE : {{ book.genre }}</h5>
             {% if book.checked_out %}
-                <h5><i> Available : &#9989; </i></h5>
+            <h5><i> Available : &#9989; </i></h5>
                     {% else %}
-                <h5><i> Available : &#10060;</i></h5>
+                <h5><i> Available : &#10060; </i></h5>
+                Return by : <u><h5>{{ book.return_by }}</h5></u>
                 {% endif %}
         </div>
     </div>

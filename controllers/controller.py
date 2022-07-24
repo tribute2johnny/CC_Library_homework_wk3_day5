@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from app import app
-from models.book import Book
+from models.book import *
 from models.book_list import books, add_book, remove_book 
 import datetime
 
@@ -24,10 +24,10 @@ def create_book():
     title = request.form['title']
     author = request.form['author']
     genre = request.form['genre']
-    checked_out = True if 'checked_out' in request.form else False
     return_by = request.form['return_by']
+    checked_out = False if 'checked_out' in request.form else True
     split_date = return_by.split('-')
-    return_by = datetime.date(split_date[0], split_date[1], split_date[2])
+    return_by = datetime.date(int(split_date[0]), int(split_date[1]), int(split_date[2]))
     new_book = Book(title, author, genre, checked_out, return_by)
     add_book(new_book)
     return redirect('/books')
